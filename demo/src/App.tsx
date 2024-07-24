@@ -8,6 +8,7 @@ import { history } from './utils/history';
 import Home from '@demo/pages/Home';
 
 const Editor = React.lazy(() => import('@demo/pages/Editor'));
+const RapEmailEditor = React.lazy(() => import('@demo/pages/Editor/RapEditor'));
 
 function App() {
   return (
@@ -50,6 +51,10 @@ function App() {
               <Route
                 path='/editor'
                 component={Editor}
+              />
+              <Route
+                path='/rap-email-editor'
+                component={RapEmailEditor}
               />
             </Switch>
           </Router>
