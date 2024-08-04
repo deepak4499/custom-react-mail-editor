@@ -48,22 +48,6 @@ export function Blocks() {
           );
         }
 
-        if (cat.displayType === 'custom') {
-          return (
-            <Collapse.Item
-              key={index}
-              contentStyle={{ padding: 0, paddingBottom: 0, paddingTop: 20 }}
-              name={cat.label}
-              header={cat.label}
-            >
-              <Grid.Row>
-                {cat.blocks.map((item, index) => {
-                  return <React.Fragment key={index}>{item}</React.Fragment>;
-                })}
-              </Grid.Row>
-            </Collapse.Item>
-          );
-        }
         return (
           <Collapse.Item
             key={index}

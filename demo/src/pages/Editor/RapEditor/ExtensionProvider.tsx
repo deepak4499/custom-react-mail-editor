@@ -1,8 +1,7 @@
-import { BlockLayerProps } from 'easy-email-extensions';
 import { isEqual, omit } from 'lodash';
 import React, { useContext, useMemo, useRef } from 'react';
 
-export interface ExtensionProps extends BlockLayerProps {
+export interface ExtensionProps {
   children?: React.ReactNode | React.ReactElement;
   categories: Array<
     | {
@@ -32,17 +31,7 @@ export interface ExtensionProps extends BlockLayerProps {
       }>;
       displayType: 'widget';
     }
-    | {
-      label: string;
-      active?: boolean;
-      blocks: Array<React.ReactNode>;
-      displayType: 'custom';
-    }
   >;
-  showSourceCode?: boolean;
-  jsonReadOnly?: boolean;
-  mjmlReadOnly?: boolean;
-  compact?: boolean;
 }
 
 export const ExtensionContext = React.createContext<ExtensionProps>({

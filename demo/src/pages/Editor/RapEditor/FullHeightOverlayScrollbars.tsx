@@ -1,5 +1,4 @@
 import React from 'react';
-// import 'overlayscrollbars/css/OverlayScrollbars.css';
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
 
 export const FullHeightOverlayScrollbars: React.FC<{

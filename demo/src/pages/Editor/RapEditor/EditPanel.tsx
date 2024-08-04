@@ -1,83 +1,73 @@
-import { Layout, Tabs } from '@arco-design/web-react';
-import { useEditorProps } from 'easy-email-editor';
-import React from 'react';
-import { BlockLayer } from 'easy-email-extensions';
-import styles from './index.module.scss';
-import { useExtensionProps } from './ExtensionProvider';
+import { useEditorProps, useBlock } from 'easy-email-editor';
+import React, { useState, useEffect } from 'react';
+import Tab from './Tab';
+import './App.scss';
+import { AttributePanel } from 'easy-email-extensions';
+import PropertiesPanel from './PropertiesPanel';
 
 const Blocks = React.lazy(() =>
   import('./Blocks').then(mod => ({ default: mod.Blocks }))
 );
-const FullHeightOverlayScrollbars = React.lazy(() =>
-  import('./FullHeightOverlayScrollbars').then(mod => ({ default: mod.FullHeightOverlayScrollbars }))
-);
-const ConfigurationDrawer = React.lazy(() =>
-  import('./ConfigurationDrawer').then(mod => ({ default: mod.ConfigurationDrawer }))
-);
+// const FullHeightOverlayScrollbars = React.lazy(() =>
+//   import('./FullHeightOverlayScrollbars').then(mod => ({ default: mod.FullHeightOverlayScrollbars }))
+// );
 
-const TabPane = Tabs.TabPane;
-
-export function EditPanel({
-  showSourceCode,
-  jsonReadOnly,
-  mjmlReadOnly,
-}: {
-  showSourceCode: boolean;
-  jsonReadOnly: boolean;
-  mjmlReadOnly: boolean;
-}) {
+export function EditPanel() {
+  const { values, focusBlock } = useBlock();
   const { height } = useEditorProps();
-  const { compact = true } = useExtensionProps();
+
+  const [activeTab, setActiveTab] = useState(0);
+
+  const model = {
+    template_name: 'Default',
+    from_address_id: '',
+    cc_mail_ids: '',
+    bcc_mail_ids: ''
+  };
+
+  useEffect(() => {
+    if (focusBlock?.type === 'page') {
+      setActiveTab(2);
+    } else if (focusBlock) {
+      setActiveTab(0);
+    }
+  }, [focusBlock]);
+
+  const handleTabClick = (index) => {
+    setActiveTab(index);
+  };
+
+  const tabs = [
+    { label: 'Attributes' },
+    { label: 'Content' },
+    { label: 'Properties' }
+  ];
 
   return (
-    <Layout.Sider
-      className={styles.blocksPanel}
-      style={{ paddingRight: 0, minWidth: 360 }}
-      // collapsed={collapsed}
-      collapsible
-      trigger={null}
-      breakpoint='xl'
-      collapsedWidth={60}
-      width={360}
-    >
-      <Tabs
-        defaultActiveTab='2'
-        style={{ width: '100%', padding: 0 }}
-        renderTabHeader={(_, DefaultHeader) => (
-          <div className={styles.largeTabsHeader}>
-            <DefaultHeader />
-          </div>
+    <div style={{ paddingRight: 0, minWidth: 360, width: 60 }}>
+      <div className="tabs">
+        {tabs.map((tab, index) => (
+          <Tab
+            key={index}
+            label={tab.label}
+            onClick={() =>
+              handleTabClick(index)
+            }
+            isActive={index === activeTab}
+          />
+        ))}
+      </div>
+      <div className="tab-content">
+        {activeTab === 0 && (
+          <AttributePanel />
         )}
-      >
-        <TabPane
-          key='2'
-          title={t('Block')}
-        >
-          <FullHeightOverlayScrollbars height={`calc(${height} - 60px)`}>
-            <Blocks />
-          </FullHeightOverlayScrollbars>
-        </TabPane>
-
-        <TabPane
-          key='1'
-          title={t('Layer')}
-        >
-          <FullHeightOverlayScrollbars height={`calc(${height} - 60px)`}>
-            <div style={{ padding: 20 }}>
-              <BlockLayer />
-            </div>
-          </FullHeightOverlayScrollbars>
-        </TabPane>
-      </Tabs>
-      {!compact && (
-        <ConfigurationDrawer
-          height={height}
-          showSourceCode={showSourceCode}
-          compact={Boolean(compact)}
-          jsonReadOnly={jsonReadOnly}
-          mjmlReadOnly={mjmlReadOnly}
-        />
-      )}
-    </Layout.Sider>
+        {activeTab === 1 && (
+          <Blocks />
+        )}
+        {activeTab === 2 && (
+          <PropertiesPanel formDataSet={model} />
+        )}
+      </div>
+    </div>
   );
 }
