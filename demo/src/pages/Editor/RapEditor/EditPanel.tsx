@@ -2,7 +2,7 @@ import { useEditorProps, useBlock } from 'easy-email-editor';
 import React, { useState, useEffect } from 'react';
 import Tab from './Tab';
 import './App.scss';
-import { AttributePanel } from 'easy-email-extensions';
+import { AttributePanel } from './AttributePanel';
 import PropertiesPanel from './PropertiesPanel';
 
 const Blocks = React.lazy(() =>
