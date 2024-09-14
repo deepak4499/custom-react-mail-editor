@@ -24,13 +24,6 @@
 
 ---
 
-## Pro Version Announcement
-
-We are delighted to announce that we now have a more powerful and customizable commercial version available. If it is for internal use only, then the open-source version is sufficient. However, if your editor is a critical feature, I recommend using the commercial version.
-<a href="https://www.easyemail.pro/?utm_source=github" target="_blank">Check it out here </a>.
-
----
-
 ## Introduction
 
 Easy email is developed based on the [MJML](https://mjml.io/) and has very good compatibility. At the same time, it can generate code through drag-and-drop editing.
@@ -45,12 +38,6 @@ Easy email is developed based on the [MJML](https://mjml.io/) and has very good 
 |                  Video Overview                  |
 | :----------------------------------------------: |
 | <img src="./StandardLayout.png" alt="Overview" > |
-
-## Live Demo
-
-Check out the live demo here: <a href="https://email.maocanhua.cn/?utm_source=github" target="_blank" alt="https://email.maocanhua.cn/?utm_source=github">email.maocanhua.cn</a>
-
-Pro version live demo here: <a href="https://demo.easyemail.pro/full?utm_source=github-live" target="_blank">demo.easyemail.pro</a>.
 
 ## Getting started
 

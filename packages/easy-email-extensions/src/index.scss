@@ -2,14 +2,17 @@
   .easy-email-editor-tabWrapper {
     background-color: var(--color-bg-3);
   }
+
   .arco-layout {
     background-color: var(--color-bg-3);
   }
+
   .easy-email-editor-button {
     background-color: var(--color-secondary);
     color: var(--color-text-2);
     border: 1px solid transparent;
   }
+
   .easy-email-editor-button:hover {
     border-color: var(--color-neutral-4);
     color: var(--color-text-2);
@@ -21,9 +24,52 @@
     color: var(--color-text-2);
     border: 1px solid transparent;
   }
+
   .easy-email-editor-button[disabled]:hover {
     background-color: var(--color-secondary);
     color: var(--color-text-2);
     border: 1px solid transparent;
   }
+}
+
+.tabs {
+  margin: 10px;
+  padding: 10px 10px 10px 0;
+  border-radius: 8px;
+  background-color: #f6f5fa;
+  display: flex;
+}
+
+.tab-content {
+  overflow: scroll;
+  height: calc(-142px + 100vh);
+}
+
+.tab {
+  width: 50%;
+  text-align: center;
+  margin-left: 10px;
+  padding: 5px;
+  cursor: pointer;
+  transition: all .2s;
+
+  &.active {
+    background-color: #fff;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #000;
+  }
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  padding: 5px 8px;
+  min-height: 34px;
+  display: block;
+  width: 100%;
+  border: 1px solid #d7d5e2;
+  border-radius: 6px;
 }
