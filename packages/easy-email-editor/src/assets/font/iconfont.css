@@ -1,8 +1,9 @@
 @font-face {
-  font-family: "iconfont"; /* Project id 2806724 */
+  font-family: "iconfont";
+  /* Project id 2806724 */
   src: url('iconfont.woff2?t=1676343677332') format('woff2'),
-       url('iconfont.woff?t=1676343677332') format('woff'),
-       url('iconfont.ttf?t=1676343677332') format('truetype');
+    url('iconfont.woff?t=1676343677332') format('woff'),
+    url('iconfont.ttf?t=1676343677332') format('truetype');
 }
 
 .iconfont {
@@ -70,7 +71,7 @@
 }
 
 .icon-merge-tags:before {
-  content: "\e608";
+  content: "PlaceHolder";
 }
 
 .icon-divider:before {
@@ -324,4 +325,3 @@
 .icon-top:before {
   content: "\e640";
 }
-

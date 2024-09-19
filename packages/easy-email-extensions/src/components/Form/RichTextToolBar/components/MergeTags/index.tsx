@@ -50,7 +50,8 @@ export function MergeTags(props: MergeTagsProps) {
       getPopupContainer={props.getPopupContainer}
     >
       <ToolItem
-        title={t('Merge tag')}
+        title={t('Insert Placeholders')}
+        isWidthAuto={Boolean(true)}
         icon={<IconFont iconName='icon-merge-tags' />}
       />
     </Popover>

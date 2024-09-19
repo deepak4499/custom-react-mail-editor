@@ -9,12 +9,13 @@ export const ToolItem: React.FC<{
   trigger?: string;
   style?: React.CSSProperties;
   isActive?: boolean;
+  isWidthAuto?: boolean;
 }> = (props) => {
   if (!props.title) {
     return (
       <button
         tabIndex={-1}
-        className='easy-email-extensions-emailToolItem'
+        className={classnames('easy-email-extensions-emailToolItem', props.isWidthAuto && 'w-auto')}
         title={props.title}
         onClick={props.onClick}
         style={props.style}
@@ -27,7 +28,7 @@ export const ToolItem: React.FC<{
     <Tooltip mini position='bottom' content={props.title}>
       <button
         tabIndex={-1}
-        className={classnames('easy-email-extensions-emailToolItem', props.isActive && 'easy-email-extensions-emailToolItem-active')}
+        className={classnames('easy-email-extensions-emailToolItem', props.isActive && 'easy-email-extensions-emailToolItem-active', props.isWidthAuto && 'w-auto')}
         title={props.title}
         onClick={props.onClick}
         style={props.style}
