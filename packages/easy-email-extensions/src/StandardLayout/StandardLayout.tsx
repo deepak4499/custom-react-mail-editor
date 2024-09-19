@@ -1,12 +1,11 @@
 import { Card, ConfigProvider, Layout } from '@arco-design/web-react';
-import { useEditorProps, useFocusIdx } from 'easy-email-editor';
-import React, { useEffect } from 'react';
+import { useEditorProps } from 'easy-email-editor';
+import React from 'react';
 import { InteractivePrompt } from '../InteractivePrompt';
 import styles from './index.module.scss';
 import enUS from '@arco-design/web-react/es/locale/en-US';
 import { MergeTagBadgePrompt } from '@extensions/MergeTagBadgePrompt';
 import { EditPanel } from '../EditPanel';
-import { ConfigurationPanel } from '@extensions/ConfigurationPanel';
 import {
   ExtensionProps,
   ExtensionProvider,
@@ -89,20 +88,8 @@ const defaultCategories: ExtensionProps['categories'] = [
 export const StandardLayout: React.FC<ExtensionProps> = props => {
   const { height: containerHeight } = useEditorProps();
   const {
-    showSourceCode = true,
-    compact = true,
     categories = defaultCategories,
-    jsonReadOnly = false,
-    mjmlReadOnly = true,
   } = props;
-
-  const { setFocusIdx } = useFocusIdx();
-
-  useEffect(() => {
-    if (!compact) {
-      setFocusIdx('');
-    }
-  }, [compact, setFocusIdx]);
 
   return (
     <ExtensionProvider
@@ -124,43 +111,11 @@ export const StandardLayout: React.FC<ExtensionProps> = props => {
               display: 'flex',
               width: '100%',
               overflow: 'hidden',
+              flexDirection: 'row'
             }}
           >
-            {compact && (
-              <EditPanel
-                showSourceCode={showSourceCode}
-                jsonReadOnly={jsonReadOnly}
-                mjmlReadOnly={mjmlReadOnly}
-              />
-            )}
+            <EditPanel />
             <Layout style={{ height: containerHeight, flex: 1 }}>{props.children}</Layout>
-            {!compact && (
-              <EditPanel
-                showSourceCode={showSourceCode}
-                jsonReadOnly={jsonReadOnly}
-                mjmlReadOnly={mjmlReadOnly}
-              />
-            )}
-            {compact ? (
-              <Layout.Sider
-                style={{
-                  height: containerHeight,
-                  minWidth: 300,
-                  maxWidth: 350,
-                  width: 350,
-                }}
-              >
-                <ConfigurationPanel
-                  compact={compact}
-                  height={containerHeight}
-                  showSourceCode={showSourceCode}
-                  jsonReadOnly={jsonReadOnly}
-                  mjmlReadOnly={mjmlReadOnly}
-                />
-              </Layout.Sider>
-            ) : (
-              <Layout.Sider style={{ width: 0, overflow: 'hidden' }} />
-            )}
           </Layout>
         </Card>
         <InteractivePrompt />
