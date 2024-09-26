@@ -1,0 +1,19 @@
+.d-flex {
+  display: flex;
+}
+
+.page-header {
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 28px;
+}
+
+.btn-primary {
+  padding: 2px 10px;
+  background-color: #408dfb;
+  color: #fff;
+  border: 1px solid #408dfb;
+  border-radius: 3px;
+}
