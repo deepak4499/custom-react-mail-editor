@@ -12,6 +12,7 @@
 .easy-email-editor-button[disabled] {
   cursor: not-allowed;
 }
+
 .easy-email-editor-button[disabled],
 .easy-email-editor-button[disabled]:hover,
 .easy-email-editor-button[disabled]:focus,
@@ -22,6 +23,7 @@
   text-shadow: none;
   box-shadow: none;
 }
+
 .easy-email-editor-button[disabled] {
   cursor: not-allowed;
 }
@@ -31,6 +33,7 @@
 .easy-email-editor-button:focus {
   outline: 0;
 }
+
 .easy-email-editor-button {
   line-height: 1.5715;
   position: relative;
@@ -46,9 +49,9 @@
   user-select: none;
   touch-action: manipulation;
   height: 32px;
-  padding: 4px 15px;
+  padding: 4px 8px;
   font-size: 14px;
-  border-radius: 2px;
+  border-radius: 8px;
   color: rgba(0, 0, 0, 0.85);
   border-color: #d9d9d9;
   background: #fff;

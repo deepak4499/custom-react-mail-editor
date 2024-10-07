@@ -41,6 +41,9 @@ export enum AdvancedType {
 
   WRAPPER = 'advanced_wrapper',
   SECTION = 'advanced_section',
+  TWOCOLUMN = 'advanced_two_column',
+  THREECOLUMN = 'advanced_three_column',
+  FOURCOLUMN = 'advanced_four_column',
   COLUMN = 'advanced_column',
   GROUP = 'advanced_group',
   HERO = 'advanced_hero',

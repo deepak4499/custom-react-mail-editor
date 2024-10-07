@@ -1,8 +1,9 @@
 @font-face {
-  font-family: "iconfont"; /* Project id 2806724 */
+  font-family: "iconfont";
+  /* Project id 2806724 */
   src: url('iconfont.woff2?t=1676343677332') format('woff2'),
-       url('iconfont.woff?t=1676343677332') format('woff'),
-       url('iconfont.ttf?t=1676343677332') format('truetype');
+    url('iconfont.woff?t=1676343677332') format('woff'),
+    url('iconfont.ttf?t=1676343677332') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +12,12 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-content-group:before {
+  content: url("/public/svgs/icon-content-group.svg");
+  display: inline-block;
+  width: 14px;
 }
 
 .icon-clear:before {
@@ -62,11 +69,15 @@
 }
 
 .icon-undo:before {
-  content: "\e6f0";
+  content: url("/public/svgs/icon-undo.svg");
+  display: inline-block;
+  width: 14px;
 }
 
 .icon-redo:before {
-  content: "\e6f1";
+  content: url("/public/svgs/icon-redo.svg");
+  display: inline-block;
+  width: 14px;
 }
 
 .icon-merge-tags:before {
@@ -74,11 +85,31 @@
 }
 
 .icon-divider:before {
-  content: "\e609";
+  content: url("/public/svgs/icon-divider.svg");
+  display: inline-block;
+  width: 20px;
 }
 
 .icon-layout:before {
   content: "\e600";
+}
+
+.icon-two-column:before {
+  content: url("/public/svgs/icon-two-column.svg");
+  display: inline-block;
+  width: 20px;
+}
+
+.icon-three-column:before {
+  content: url("/public/svgs/icon-three-column.svg");
+  display: inline-block;
+  width: 20px;
+}
+
+.icon-four-column:before {
+  content: url("/public/svgs/icon-four-column.svg");
+  display: inline-block;
+  width: 20px;
 }
 
 .icon-column:before {
@@ -170,7 +201,9 @@
 }
 
 .icon-button:before {
-  content: "\ed65";
+  content: url("/public/svgs/icon-button.svg");
+  display: inline-block;
+  width: 20px;
 }
 
 .icon-eye:before {
@@ -210,7 +243,9 @@
 }
 
 .icon-social:before {
-  content: "\e7a1";
+  content: url("/public/svgs/icon-social.svg");
+  display: inline-block;
+  width: 20px;
 }
 
 .icon-carousel:before {
@@ -222,7 +257,9 @@
 }
 
 .icon-spacing:before {
-  content: "\e606";
+  content: url("/public/svgs/icon-spacing.svg");
+  display: inline-block;
+  width: 20px;
 }
 
 .icon-accordion:before {
@@ -290,11 +327,15 @@
 }
 
 .icon-img:before {
-  content: "\e61b";
+  content: url("/public/svgs/icon-img.svg");
+  display: inline-block;
+  width: 20px;
 }
 
 .icon-text:before {
-  content: "\e695";
+  content: url("/public/svgs/icon-text.svg");
+  display: inline-block;
+  width: 20px;
 }
 
 .icon-section:before {
@@ -324,4 +365,3 @@
 .icon-top:before {
   content: "\e640";
 }
-

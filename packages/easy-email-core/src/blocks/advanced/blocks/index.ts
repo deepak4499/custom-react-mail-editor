@@ -83,6 +83,24 @@ export const AdvancedGroup = generateAdvancedLayoutBlock<IGroup>({
   validParentType: [BasicType.SECTION, AdvancedType.SECTION],
 });
 
+export const AdvancedTwoColumn = generateAdvancedLayoutBlock<ISection>({
+  type: AdvancedType.SECTION,
+  baseType: BasicType.SECTION,
+  validParentType: [BasicType.PAGE, BasicType.WRAPPER, AdvancedType.WRAPPER],
+});
+
+export const AdvancedThreeColumn = generateAdvancedLayoutBlock<ISection>({
+  type: AdvancedType.SECTION,
+  baseType: BasicType.SECTION,
+  validParentType: [BasicType.PAGE, BasicType.WRAPPER, AdvancedType.WRAPPER],
+});
+
+export const AdvancedFourColumn = generateAdvancedLayoutBlock<ISection>({
+  type: AdvancedType.SECTION,
+  baseType: BasicType.SECTION,
+  validParentType: [BasicType.PAGE, BasicType.WRAPPER, AdvancedType.WRAPPER],
+});
+
 export const AdvancedColumn = generateAdvancedLayoutBlock<IColumn>({
   type: AdvancedType.COLUMN,
   baseType: BasicType.COLUMN,

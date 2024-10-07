@@ -31,6 +31,9 @@ const iconsMap = {
   [AdvancedType.WRAPPER]: 'icon-wrapper',
   [AdvancedType.SECTION]: 'icon-section',
   [AdvancedType.COLUMN]: 'icon-column',
+  [AdvancedType.TWOCOLUMN]: 'icon-two-column',
+  [AdvancedType.THREECOLUMN]: 'icon-three-column',
+  [AdvancedType.FOURCOLUMN]: 'icon-four-column',
   [AdvancedType.GROUP]: 'icon-group',
   [AdvancedType.HERO]: 'icon-hero',
 };
