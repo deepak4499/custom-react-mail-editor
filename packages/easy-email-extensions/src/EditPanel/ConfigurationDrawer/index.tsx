@@ -6,15 +6,9 @@ import React, { useCallback, useMemo, useRef } from 'react';
 export function ConfigurationDrawer({
   height,
   compact,
-  showSourceCode,
-  jsonReadOnly,
-  mjmlReadOnly,
 }: {
   height: string;
   compact: boolean;
-  showSourceCode: boolean;
-  jsonReadOnly: boolean;
-  mjmlReadOnly: boolean;
 }) {
   const refWrapper = useRef(null);
   const { focusIdx, setFocusIdx } = useFocusIdx();
@@ -54,15 +48,12 @@ export function ConfigurationDrawer({
           >
             <ConfigurationPanel
               compact={compact}
-              showSourceCode={showSourceCode}
               height={height}
               onBack={onClose}
-              jsonReadOnly={jsonReadOnly}
-              mjmlReadOnly={mjmlReadOnly}
             />
           </Drawer>
         )}
       </>
     );
-  }, [visible, onClose, compact, showSourceCode, height]);
+  }, [visible, onClose, compact, height]);
 }

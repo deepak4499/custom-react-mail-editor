@@ -2,7 +2,6 @@ import { Layout, Tabs } from '@arco-design/web-react';
 import { useEditorProps } from 'easy-email-editor';
 import React from 'react';
 import { Blocks } from './Blocks';
-import { BlockLayer } from '@extensions/BlockLayer';
 import { FullHeightOverlayScrollbars } from '@extensions/components/FullHeightOverlayScrollbars';
 import styles from './index.module.scss';
 import { ConfigurationDrawer } from './ConfigurationDrawer';
@@ -10,15 +9,7 @@ import { useExtensionProps } from '@extensions/components/Providers/ExtensionPro
 
 const TabPane = Tabs.TabPane;
 
-export function EditPanel({
-  showSourceCode,
-  jsonReadOnly,
-  mjmlReadOnly,
-}: {
-  showSourceCode: boolean;
-  jsonReadOnly: boolean;
-  mjmlReadOnly: boolean;
-}) {
+export function EditPanel() {
   const { height } = useEditorProps();
   const { compact = true } = useExtensionProps();
 
@@ -33,7 +24,18 @@ export function EditPanel({
       collapsedWidth={60}
       width={360}
     >
-      <Tabs
+      <div style={{ height: '60px', borderBottom: '1px solid #eee', padding: '8px' }}>
+        <div style={{ backgroundColor: '#ebebf5', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '10px', height: '100%' }}>
+          <div style={{ padding: '5px 15px', borderRadius: '8px', backgroundColor: '#fff' }}>
+            <img src="/public/svgs/icon-content-group.svg" width={14} style={{ marginRight: '7px', verticalAlign: 'text-top', marginTop: '1px' }} />
+            Content
+          </div>
+        </div>
+      </div>
+      <FullHeightOverlayScrollbars height={`calc(${height} - 60px)`}>
+        <Blocks />
+      </FullHeightOverlayScrollbars>
+      {/* <Tabs
         defaultActiveTab='2'
         style={{ width: '100%', padding: 0 }}
         renderTabHeader={(_, DefaultHeader) => (
@@ -44,31 +46,17 @@ export function EditPanel({
       >
         <TabPane
           key='2'
-          title={t('Block')}
+          title={t('Content')}
         >
           <FullHeightOverlayScrollbars height={`calc(${height} - 60px)`}>
             <Blocks />
           </FullHeightOverlayScrollbars>
         </TabPane>
-
-        <TabPane
-          key='1'
-          title={t('Layer')}
-        >
-          <FullHeightOverlayScrollbars height={`calc(${height} - 60px)`}>
-            <div style={{ padding: 20 }}>
-              <BlockLayer />
-            </div>
-          </FullHeightOverlayScrollbars>
-        </TabPane>
-      </Tabs>
+      </Tabs> */}
       {!compact && (
         <ConfigurationDrawer
           height={height}
-          showSourceCode={showSourceCode}
           compact={Boolean(compact)}
-          jsonReadOnly={jsonReadOnly}
-          mjmlReadOnly={mjmlReadOnly}
         />
       )}
     </Layout.Sider>

@@ -20,6 +20,9 @@ import {
   AdvancedWrapper,
   AdvancedSection,
   AdvancedGroup,
+  AdvancedTwoColumn,
+  AdvancedThreeColumn,
+  AdvancedFourColumn,
   AdvancedColumn,
   AdvancedHero,
 } from './blocks';
@@ -38,6 +41,9 @@ export const advancedBlocks = {
   [AdvancedType.WRAPPER]: AdvancedWrapper,
   [AdvancedType.SECTION]: AdvancedSection,
   [AdvancedType.GROUP]: AdvancedGroup,
+  [AdvancedType.TWOCOLUMN]: AdvancedTwoColumn,
+  [AdvancedType.THREECOLUMN]: AdvancedThreeColumn,
+  [AdvancedType.FOURCOLUMN]: AdvancedFourColumn,
   [AdvancedType.COLUMN]: AdvancedColumn,
   [AdvancedType.HERO]: AdvancedHero,
 };

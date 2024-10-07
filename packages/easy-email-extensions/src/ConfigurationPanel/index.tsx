@@ -7,21 +7,15 @@ import { IconLeft } from '@arco-design/web-react/icon';
 import styles from './index.module.scss';
 
 export interface ConfigurationPanelProps {
-  showSourceCode: boolean;
-  jsonReadOnly: boolean;
-  mjmlReadOnly: boolean;
   height: string;
   onBack?: () => void;
   compact?: boolean;
 }
 
 export function ConfigurationPanel({
-  showSourceCode,
   height,
   onBack,
   compact,
-  jsonReadOnly,
-  mjmlReadOnly,
 }: ConfigurationPanelProps) {
   const [inited, setInited] = useState(false);
 
@@ -39,7 +33,8 @@ export function ConfigurationPanel({
 
   return (
     <>
-      {showSourceCode ? (
+      <AttributePanel />
+      {/* {showSourceCode ? (
         <Tabs
           className={styles.tabs}
           renderTabHeader={(_, DefaultHeader) =>
@@ -91,7 +86,7 @@ export function ConfigurationPanel({
         </Tabs>
       ) : (
         <AttributePanel />
-      )}
+      )} */}
     </>
   );
 }

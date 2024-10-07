@@ -89,11 +89,8 @@ const defaultCategories: ExtensionProps['categories'] = [
 export const StandardLayout: React.FC<ExtensionProps> = props => {
   const { height: containerHeight } = useEditorProps();
   const {
-    showSourceCode = true,
     compact = true,
     categories = defaultCategories,
-    jsonReadOnly = false,
-    mjmlReadOnly = true,
   } = props;
 
   const { setFocusIdx } = useFocusIdx();
@@ -127,19 +124,11 @@ export const StandardLayout: React.FC<ExtensionProps> = props => {
             }}
           >
             {compact && (
-              <EditPanel
-                showSourceCode={showSourceCode}
-                jsonReadOnly={jsonReadOnly}
-                mjmlReadOnly={mjmlReadOnly}
-              />
+              <EditPanel />
             )}
             <Layout style={{ height: containerHeight, flex: 1 }}>{props.children}</Layout>
             {!compact && (
-              <EditPanel
-                showSourceCode={showSourceCode}
-                jsonReadOnly={jsonReadOnly}
-                mjmlReadOnly={mjmlReadOnly}
-              />
+              <EditPanel />
             )}
             {compact ? (
               <Layout.Sider
@@ -153,9 +142,6 @@ export const StandardLayout: React.FC<ExtensionProps> = props => {
                 <ConfigurationPanel
                   compact={compact}
                   height={containerHeight}
-                  showSourceCode={showSourceCode}
-                  jsonReadOnly={jsonReadOnly}
-                  mjmlReadOnly={mjmlReadOnly}
                 />
               </Layout.Sider>
             ) : (

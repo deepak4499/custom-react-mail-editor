@@ -6,42 +6,33 @@ export interface ExtensionProps extends BlockLayerProps {
   children?: React.ReactNode | React.ReactElement;
   categories: Array<
     | {
-        label: string;
-        active?: boolean;
-        blocks: Array<{
-          type: string;
-          payload?: any;
-          title?: string | undefined;
-        }>;
-        displayType?: 'grid';
-      }
+      label: string;
+      active?: boolean;
+      blocks: Array<{
+        type: string;
+        payload?: any;
+        title?: string | undefined;
+      }>;
+      displayType?: 'grid';
+    }
     | {
-        label: string;
-        active?: boolean;
-        blocks: Array<{
-          payload?: any;
-          title?: string | undefined;
-        }>;
-        displayType: 'column';
-      }
+      label: string;
+      active?: boolean;
+      blocks: Array<{
+        payload?: any;
+        title?: string | undefined;
+      }>;
+      displayType: 'column';
+    }
     | {
-        label: string;
-        active?: boolean;
-        blocks: Array<{
-          payload?: any;
-        }>;
-        displayType: 'widget';
-      }
-    | {
-        label: string;
-        active?: boolean;
-        blocks: Array<React.ReactNode>;
-        displayType: 'custom';
-      }
+      label: string;
+      active?: boolean;
+      blocks: Array<{
+        payload?: any;
+      }>;
+      displayType: 'widget';
+    }
   >;
-  showSourceCode?: boolean;
-  jsonReadOnly?: boolean;
-  mjmlReadOnly?: boolean;
   compact?: boolean;
 }
 

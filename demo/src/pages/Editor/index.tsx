@@ -67,35 +67,111 @@ const defaultCategories: ExtensionProps['categories'] = [
       {
         type: AdvancedType.WRAPPER,
       },
-    ],
-  },
-  {
-    label: 'Layout',
-    active: true,
-    displayType: 'column',
-    blocks: [
       {
-        title: '2 columns',
-        payload: [
-          ['50%', '50%'],
-          ['33%', '67%'],
-          ['67%', '33%'],
-          ['25%', '75%'],
-          ['75%', '25%'],
-        ],
+        type: AdvancedType.TWOCOLUMN,
+        title: '2 Column',
+        payload: {
+          attributes: {},
+          children: [{
+            type: AdvancedType.COLUMN,
+            attributes: {
+              width: '50%',
+            },
+            data: {
+              value: {},
+            },
+            children: [],
+          }, {
+            type: AdvancedType.COLUMN,
+            attributes: {
+              width: '50%',
+            },
+            data: {
+              value: {},
+            },
+            children: [],
+          }],
+        }
       },
       {
-        title: '3 columns',
-        payload: [
-          ['33.33%', '33.33%', '33.33%'],
-          ['25%', '25%', '50%'],
-          ['50%', '25%', '25%'],
-        ],
+        type: AdvancedType.THREECOLUMN,
+        title: '3 Column',
+        payload: {
+          attributes: {},
+          children: [{
+            type: AdvancedType.COLUMN,
+            attributes: {
+              width: '33.33%',
+            },
+            data: {
+              value: {},
+            },
+            children: [],
+          }, {
+            type: AdvancedType.COLUMN,
+            attributes: {
+              width: '33.33%',
+            },
+            data: {
+              value: {},
+            },
+            children: [],
+          }, {
+            type: AdvancedType.COLUMN,
+            attributes: {
+              width: '33.33%',
+            },
+            data: {
+              value: {},
+            },
+            children: [],
+          }],
+        }
       },
       {
-        title: '4 columns',
-        payload: [['25%', '25%', '25%', '25%']],
-      },
+        type: AdvancedType.FOURCOLUMN,
+        title: '4 Column',
+        payload: {
+          attributes: {},
+          children: [{
+            type: AdvancedType.COLUMN,
+            attributes: {
+              width: '25%',
+            },
+            data: {
+              value: {},
+            },
+            children: [],
+          }, {
+            type: AdvancedType.COLUMN,
+            attributes: {
+              width: '25%',
+            },
+            data: {
+              value: {},
+            },
+            children: [],
+          }, {
+            type: AdvancedType.COLUMN,
+            attributes: {
+              width: '25%',
+            },
+            data: {
+              value: {},
+            },
+            children: [],
+          }, {
+            type: AdvancedType.COLUMN,
+            attributes: {
+              width: '25%',
+            },
+            data: {
+              value: {},
+            },
+            children: [],
+          }],
+        }
+      }
     ],
   }
 ];
